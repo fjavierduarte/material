@@ -1,5 +1,6 @@
 import Container from "@mui/material/Container";
 import Hero from '@components/Hero'
+import SectionAbout from "@components/SectionAbout";
 
 const Homepage = () => {
   return (
@@ -10,6 +11,7 @@ const Homepage = () => {
         title="The best of Italian food"
         subtitle="Best Italian Restaurant In Town"
       />
+      <SectionAbout />
     </Container>
   );
 };
