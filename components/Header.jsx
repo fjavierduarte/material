@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
@@ -11,9 +13,12 @@ import Navbar from "@components/Navbar";
 import SideDrawer from "@components/SideDrawer";
 import HideOnScroll from "@components/HideOnScroll";
 
+
 import Fab from "@mui/material/Fab";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import BackToTop from "@components/BackToTop";
+
+
 
 
 
@@ -29,6 +34,7 @@ export const navLinks = [
 ];
 
 const Header = () => {
+  
   return (
     <>
       <HideOnScroll>      

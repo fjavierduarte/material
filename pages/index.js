@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+
 import { useRouter } from 'next/router'
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -6,13 +8,19 @@ import Hero from '@components/Hero'
 import SectionAbout from "@components/SectionAbout";
 import SectionImage from "@components/SectionImage";
 import NavigationCard from "@components/NavigationCard";
+import ContextoUsuario from "@components/ContextoUsuario";
+
 
 import en from '../public/locales/en'
 import es from '../public/locales/es'
 import it from '../public/locales/it'
 
 
+
 const Homepage = () => {
+  const locale = useContext(ContextoUsuario);
+//const { locale } = useRouter();
+//console.log("locale en _app " + locale);  
   return (
     <Container disableGutters = "true" maxWidth = "false">  
       <Hero
