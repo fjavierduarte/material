@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from '@mui/material/Typography'
 import Stack from "@mui/material/Stack";
-import { Facebook, Instagram, Twitter } from "@mui/icons-material";
+import { Facebook, Instagram, Twitter, YouTube } from "@mui/icons-material";
 import MuiNextLink from "@components/MuiNextLink";
 
 
@@ -39,7 +39,15 @@ const Footer = () => {
         rel="noopener noreferrer"
       >
         <Instagram fontSize="large" />
-      </MuiNextLink>     
+      </MuiNextLink>   
+      <MuiNextLink
+        sx={{ textDecoration: "none", color: "common.white" }}
+        href="https://www.google.com/"
+        target="_blank"
+        rel="noo99pener noreferrer"
+      >
+        <YouTube fontSize="large" />
+      </MuiNextLink>          
     </Stack>  
     <Typography align="center" color="common.white">
       © 1994 - {new Date().getFullYear()}, De West Sakura Restaurant

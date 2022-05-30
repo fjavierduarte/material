@@ -1,56 +1,62 @@
 import React, { useContext } from 'react';
 
-import { useRouter } from 'next/router'
+
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
+//@components es un compilerOptions agegado en jsconfig.json
 import Hero from '@components/Hero'
 import SectionAbout from "@components/SectionAbout";
 import SectionImage from "@components/SectionImage";
 import NavigationCard from "@components/NavigationCard";
 import ContextoUsuario from "@components/ContextoUsuario";
 
-
-import en from '../public/locales/en'
-import es from '../public/locales/es'
-import it from '../public/locales/it'
-
-
+import useTranslation from  "../hooks/useTranslation";
 
 const Homepage = () => {
-  const locale = useContext(ContextoUsuario);
-//const { locale } = useRouter();
-//console.log("locale en _app " + locale);  
+
+  const { label } = useTranslation();
+
   return (
     <Container disableGutters = "true" maxWidth = "false">  
       <Hero
-        imgSrc="/home-hero.jpg"
-        imgAlt="satified woman eating in restaurant"
-        title="The best of Italian food"
-        subtitle="Best Italian Restaurant In Town"
+        imgSrc={label("index","heroImgSrc")}
+        imgAlt={label("index","heroImgAlt")}
+        title={label("index","heroTitle")}
+        subtitle={label("index","heroSubtitle")}
       />
-      <SectionAbout />
-      <SectionImage imgSrc="/fusion-food.jpg" imgAlt="fusion foof" />
+      <SectionAbout    
+        imgSrc={label("index","SectionAboutImgSrc")}
+        imgAlt={label("index","SectionAboutImgAlt")}
+        title={label("index","SectionAboutTitle")}
+        pompadour={label("index","SectionAboutPompadour")}
+        buttonCaption={label("index","SectionAboutButtonCaption")}
+        buttonHref={label("index","SectionAboutButtonHref")}           
+      />
+      <SectionImage 
+        imgSrc={label("index","SectionImageImgSrc")}  
+        imgAlt={label("index","SectionImgAlt")} 
+      />
       <Container maxWidth="md" sx={{ my: 15 }}>
         <Grid container spacing={2}>
           <Grid container item justifyContent="center" xs={12} md={6}>
             <NavigationCard
-              imgSrc="/menu.jpg"
-              imgAlt="food menu"
-              title="Menu"
-              desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus."
-              pagePath="./menu"
-              ctaText="Check Out"
+              imgSrc={label("index","Card01ImgSrc")}
+              imgAlt={label("index","Card01ImgAlt")}
+              title={label("index","Card01Title")}
+              desc={label("index","Card01Desc")}
+              pagePath={label("index","Card01PagePath")}
+              ctaText={label("index","Card01CtaText")}
             />
           </Grid>
           <Grid container item justifyContent="center" xs={12} md={6}>
           <NavigationCard
-              imgSrc="/catering.jpg"
-              imgAlt="catering"
-              title="Catering"
-              desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, minus."
-              pagePath="./catering"
-              ctaText="Find Out"
+              imgSrc={label("index","Card02ImgSrc")}
+              imgAlt={label("index","Card02ImgAlt")}
+              title={label("index","Card02Title")}
+              desc={label("index","Card02Desc")}
+              pagePath={label("index","Card02PagePath")}
+              ctaText={label("index","Card02CtaText")}
             />            
           </Grid>
         </Grid>
