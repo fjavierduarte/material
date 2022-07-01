@@ -13,7 +13,7 @@ import theme from '../styles/theme';//Selecciona los colores elegidos para el di
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import { ProviderUsuario } from "@components/ContextoUsuario";
-import { LanguageProvider } from "@components/LanguageProvider";
+//import { LanguageProvider } from "@components/LanguageProvider";
 
 import useTranslation from  "../hooks/useTranslation";
 import { Paper } from '@mui/material';
